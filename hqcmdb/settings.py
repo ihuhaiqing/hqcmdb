@@ -39,9 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'common',
     'resource',
     'application',
-    'common',
 ]
 
 MIDDLEWARE = [
@@ -136,6 +136,49 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # SimpleUI
 SIMPLEUI_HOME_INFO = False 
 SIMPLEUI_ANALYSIS = False
+
+SIMPLEUI_CONFIG = {
+    'system_keep': False,  # 是否使用系统默认菜单，自定义菜单时建议关闭
+    'menu_display': ['资源', '应用', '通用', '权限认证'],  # 自定义菜单显示
+    'dynamic': False,  # 是否开启动态菜单
+    'menus': [
+        {
+            'app': 'auth',
+            'name': '权限认证',
+            'icon': 'fas fa-user-shield',
+            'models': [
+                {'name': '管理用户列表', 'url': '/auth/user/', 'icon': 'fa fa-user-secret'},
+                {'name': '用户组', 'url': '/auth/group/', 'icon': 'fa fa-th-list'}
+            ]
+        },
+        {
+            'app': 'resource',
+            'name': '资源',
+            'icon': 'fas fa-database',
+            'models': [
+                {'name': '主机', 'url': '/resource/host/', 'icon': ' '}
+            ]
+        },
+        {
+            'app': 'application',
+            'name': '应用',
+            'icon': 'fas fa-th-large',
+            'models': [
+                {'name': 'MySQL', 'url': '/application/mysql/', 'icon': ' '}
+            ]
+        },
+        {
+            'app': 'common',
+            'name': '通用',
+            'icon': 'fas fa-cogs',
+            'models': [
+                {'name': '操作系统', 'url': '/common/operatingsystem/', 'icon': ' '},
+                {'name': '环境', 'url': '/common/environment/', 'icon': ' '},
+                {'name': '项目', 'url': '/common/Project/', 'icon': ' '}
+            ]
+        }
+    ]
+}
 
 # 字段加密密钥，由 Fernet.generate_key() 生成
 KEY = 'TtktGQy2ipSj_GLCo-kokZTr10dujAp8Hzax6zouvbw='
