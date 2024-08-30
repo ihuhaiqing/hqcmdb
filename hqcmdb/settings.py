@@ -132,4 +132,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # SimpleUI
 SIMPLEUI_HOME_INFO = False 
-SIMPLEUI_ANALYSIS = False 
+SIMPLEUI_ANALYSIS = False
+
+# 字段加密密钥
+KEY = 'TtktGQy2ipSj_GLCo-kokZTr10dujAp8Hzax6zouvbw='
