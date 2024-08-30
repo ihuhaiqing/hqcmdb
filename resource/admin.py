@@ -1,5 +1,14 @@
+from django import forms
 from django.contrib import admin
 from .models import Host
+
+class HostForm(forms.ModelForm):
+    class Meta:
+        model = Host
+        fields = '__all__'
+        widgets = {
+            'projects': forms.CheckboxSelectMultiple,  # 使用复选框显示多对多字段
+        }
 
 # 注册主机模型
 @admin.register(Host)
@@ -8,11 +17,8 @@ class HostAdmin(admin.ModelAdmin):
     search_fields = ('ip_address',)
     list_filter = ('operating_system', 'environment')
     list_per_page = 20
+    form = HostForm
 
     def display_projects(self, obj):
         return ", ".join([project.name for project in obj.projects.all()])
     display_projects.short_description = '项目'
-
-# 也可以使用简单的注册方式
-# admin.site.register(Host, HostAdmin)
-

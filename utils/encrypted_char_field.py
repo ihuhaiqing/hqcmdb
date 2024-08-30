@@ -3,7 +3,7 @@ from django.conf import settings
 from django.db import models
 
 # Fernet.generate_key() 生成密钥保存在配置文件中
-cipher_suite = Fernet(settings.KEY)
+cipher_suite = Fernet(settings.FERNET_KEY)
 
 class EncryptedCharField(models.CharField):
     def get_prep_value(self, value):

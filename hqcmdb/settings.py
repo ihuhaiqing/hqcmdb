@@ -147,16 +147,16 @@ SIMPLEUI_CONFIG = {
             'name': '权限认证',
             'icon': 'fas fa-user-shield',
             'models': [
-                {'name': '管理用户列表', 'url': '/auth/user/', 'icon': 'fa fa-user-secret'},
-                {'name': '用户组', 'url': '/auth/group/', 'icon': 'fa fa-th-list'}
+                {'name': '用户', 'url': '/auth/user/', 'icon': 'fa fa-user'},
+                {'name': '组', 'url': '/auth/group/', 'icon': 'fa fa-users'}
             ]
         },
         {
             'app': 'resource',
             'name': '资源',
-            'icon': 'fas fa-database',
+            'icon': 'fa fa-cubes',
             'models': [
-                {'name': '主机', 'url': '/resource/host/', 'icon': ' '}
+                {'name': '主机', 'url': '/resource/host/', 'icon': 'fas fa-server'}
             ]
         },
         {
@@ -164,7 +164,7 @@ SIMPLEUI_CONFIG = {
             'name': '应用',
             'icon': 'fas fa-th-large',
             'models': [
-                {'name': 'MySQL', 'url': '/application/mysql/', 'icon': ' '}
+                {'name': 'MySQL', 'url': '/application/mysql/', 'icon': 'fas fa-database'}
             ]
         },
         {
@@ -172,13 +172,13 @@ SIMPLEUI_CONFIG = {
             'name': '通用',
             'icon': 'fas fa-cogs',
             'models': [
-                {'name': '操作系统', 'url': '/common/operatingsystem/', 'icon': ' '},
-                {'name': '环境', 'url': '/common/environment/', 'icon': ' '},
-                {'name': '项目', 'url': '/common/Project/', 'icon': ' '}
+                {'name': '操作系统', 'url': '/common/operatingsystem/', 'icon': 'fas fa-desktop'},
+                {'name': '环境', 'url': '/common/environment/', 'icon': 'fas fa-tree'},
+                {'name': '项目', 'url': '/common/project/', 'icon': 'fas fa-project-diagram'}
             ]
         }
     ]
 }
 
 # 字段加密密钥，由 Fernet.generate_key() 生成
-KEY = 'TtktGQy2ipSj_GLCo-kokZTr10dujAp8Hzax6zouvbw='
+FERNET_KEY = 'TtktGQy2ipSj_GLCo-kokZTr10dujAp8Hzax6zouvbw='
