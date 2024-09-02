@@ -5,7 +5,7 @@ from utils.encrypted_char_field import EncryptedCharField
 
 class Host(models.Model):
     hostname = models.CharField(max_length=100, unique=True, verbose_name='主机名', default='hostname')
-    ip_address = models.GenericIPAddressField(protocol='both', unpack_ipv4=False, verbose_name='IP地址', default='0.0.0.0')
+    ip_address = models.GenericIPAddressField(protocol='both', unpack_ipv4=False, verbose_name='IP地址', default='10.1.0.0')
     operating_system = models.ForeignKey(OperatingSystem, on_delete=models.CASCADE, verbose_name='操作系统')
     projects = models.ManyToManyField(Project, blank=True, verbose_name='项目')
     environment = models.ForeignKey(Environment, on_delete=models.CASCADE, verbose_name='环境')
