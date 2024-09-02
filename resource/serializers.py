@@ -13,4 +13,4 @@ class HostSerializer(serializers.ModelSerializer):
         return [obj.ip_address + ":9100"]
     
     def get_labels(self, obj):
-        return {"hostname": obj.hostname, "description": obj.description}
+        return {"hostname": obj.hostname, "environment": obj.environment.name, "description": obj.description}
