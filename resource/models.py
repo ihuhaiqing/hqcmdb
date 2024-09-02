@@ -13,7 +13,7 @@ class Host(models.Model):
     memory_gb = models.FloatField(verbose_name='内存(GB)', default=16.0)
     storage_gb = models.FloatField(verbose_name='存储(GB)', default=256.0)
     password = EncryptedCharField(max_length=255, verbose_name="密码")
-    description = models.TextField(blank=True, verbose_name='描述', default='description')
+    description = models.CharField(max_length=255, blank=True, verbose_name='描述', default='description')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='更新时间')
 
