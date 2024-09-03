@@ -34,12 +34,12 @@
             <el-dialog title="{% trans 'History' %}" :visible.sync="dialogTableVisible">
             <iframe frameborder="0" :src="url" width="100%" height="300"></iframe>
             </el-dialog>
-            {% url opts|admin_urlname:'history' original.pk|admin_urlquote as history_url %}
+            <!-- {% url opts|admin_urlname:'history' original.pk|admin_urlquote as history_url %}
 
             <el-button @click="go_url('{% add_preserved_filters history_url %}')" class="historylink el-button--small" type="text">
                 <span class="fas fa-history" style="margin-right: 5px"></span>
                 {% trans "History" %}
-            </el-button>
+            </el-button> -->
         </li>
         {% if has_absolute_url %}
         <li>
