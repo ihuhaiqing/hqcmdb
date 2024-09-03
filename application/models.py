@@ -3,7 +3,6 @@ from common.models import Environment, Project
 from resource.models import Host
 from utils.encrypted_char_field import EncryptedCharField
 
-
 class MySQL(models.Model):
     database_name = models.CharField(max_length=255, verbose_name="数据库名称", default="database_name")
     host = models.ForeignKey(Host, on_delete=models.CASCADE, verbose_name="主机")
