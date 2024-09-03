@@ -1,9 +1,9 @@
+from django import forms
 from django.contrib import admin
 from application.models import MySQL
-# from utils.cryptography import decrypt_data
 
 @admin.register(MySQL)
 class MySQLAdmin(admin.ModelAdmin):
-    list_display = ('host', 'port', 'username', 'password', 'database_name', 'version', 'created_at', 'updated_at')
-    search_fields = ('host__hostname', 'database_name', 'version')
-    list_filter = ('host', 'version')
+    list_display = ('database_name', 'project', 'host', 'port', 'username', 'password', 'version', 'environment', 'created_at', 'updated_at')
+    search_fields = ('host__ip_address',)
+    list_filter = ('project', 'environment')
