@@ -138,6 +138,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # SimpleUI
 SIMPLEUI_HOME_INFO = False 
 SIMPLEUI_ANALYSIS = False
+SIMPLEUI_STATIC_OFFLINE = True
 
 SIMPLEUI_CONFIG = {
     'system_keep': False,  # 是否使用系统默认菜单，自定义菜单时建议关闭
