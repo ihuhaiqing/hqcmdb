@@ -143,7 +143,7 @@ SIMPLEUI_STATIC_OFFLINE = True
 SIMPLEUI_CONFIG = {
     'system_keep': False,  # 是否使用系统默认菜单，自定义菜单时建议关闭
     'menu_display': ['资源', '应用', '通用', '权限认证'],  # 自定义菜单显示
-    'dynamic': False,  # 是否开启动态菜单
+    'dynamic': True,  # 是否开启动态菜单
     'menus': [
         {
             'app': 'auth',
