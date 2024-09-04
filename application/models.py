@@ -25,4 +25,4 @@ class MySQL(models.Model):
         super(MySQL, self).save(*args, **kwargs)
 
     def __str__(self):
-        return f"MySQL on {self.host.hostname}:{self.port}"
+        return f"{self.database_name} on {self.host.hostname}"
