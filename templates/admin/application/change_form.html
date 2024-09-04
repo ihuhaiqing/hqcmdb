@@ -1,0 +1,21 @@
+{% extends "admin/change_form.html" %}
+{% load i18n static simpletags %}
+{% block extrahead %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'admin/js/vendor/jquery/jquery.min.js' %}"></script>
+    <script>
+        $(function() {
+            $('#id_environment').change(function() {
+                var url = '/hosts/' + $(this).val() + '/';
+                $.get(url, function(data) {
+                    var citySelect = $('#id_host');
+                    citySelect.empty();
+                    citySelect.append('<option value="">---------</option>');
+                    $.each(data, function(key, value) {
+                        citySelect.append('<option value="' + value.id + '">' + value.ip_address + '</option>');
+                    });
+                });
+            });
+        });
+    </script>
+{% endblock %}
