@@ -22,4 +22,4 @@ class Host(models.Model):
         verbose_name_plural = '主机'
 
     def __str__(self):
-        return f'{self.environment}: {self.ip_address}'
+        return self.ip_address

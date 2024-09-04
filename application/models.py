@@ -8,6 +8,7 @@ class MySQL(models.Model):
     environment = models.ForeignKey(Environment, on_delete=models.CASCADE, verbose_name="环境")
     host = models.ForeignKey(Host, on_delete=models.CASCADE, verbose_name="主机")
     port = models.IntegerField(default=3306, verbose_name="端口号")
+    role = models.CharField(max_length=50, verbose_name="角色", choices=[('PRIMARY', 'PRIMARY'), ('SECONDARY', 'SECONDARY')], default='PRIMARY')
     username = models.CharField(max_length=255, verbose_name="用户名", default="root")
     password = EncryptedCharField(max_length=255, verbose_name="密码", default="password")
     version = models.CharField(max_length=50, verbose_name="MySQL 版本号", default="8.0")
