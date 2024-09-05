@@ -140,48 +140,48 @@ SIMPLEUI_HOME_INFO = False
 SIMPLEUI_ANALYSIS = False
 SIMPLEUI_STATIC_OFFLINE = True
 
-SIMPLEUI_CONFIG = {
-    'system_keep': False,  # 是否使用系统默认菜单，自定义菜单时建议关闭
-    'menu_display': ['资源', '应用', '通用', '权限认证'],  # 自定义菜单显示
-    'dynamic': False,  # 是否开启动态菜单
-    'menus': [
-        {
-            'app': 'auth',
-            'name': '权限认证',
-            'icon': 'fas fa-user-shield',
-            'models': [
-                {'name': '用户', 'url': '/auth/user/', 'icon': 'fa fa-user'},
-                {'name': '组', 'url': '/auth/group/', 'icon': 'fa fa-users'}
-            ]
-        },
-        {
-            'app': 'resource',
-            'name': '资源',
-            'icon': 'fa fa-cubes',
-            'models': [
-                {'name': '主机', 'url': '/resource/host/', 'icon': 'fas fa-server'}
-            ]
-        },
-        {
-            'app': 'application',
-            'name': '应用',
-            'icon': 'fas fa-th-large',
-            'models': [
-                {'name': 'MySQL', 'url': '/application/mysql/', 'icon': 'fas fa-database'}
-            ]
-        },
-        {
-            'app': 'common',
-            'name': '通用',
-            'icon': 'fas fa-cogs',
-            'models': [
-                {'name': '操作系统', 'url': '/common/operatingsystem/', 'icon': 'fas fa-desktop'},
-                {'name': '环境', 'url': '/common/environment/', 'icon': 'fas fa-tree'},
-                {'name': '项目', 'url': '/common/project/', 'icon': 'fas fa-project-diagram'}
-            ]
-        }
-    ]
-}
+# SIMPLEUI_CONFIG = {
+#     'system_keep': False,  # 是否使用系统默认菜单，自定义菜单时建议关闭
+#     'menu_display': ['资源', '应用', '通用', '权限认证'],  # 自定义菜单显示
+#     'dynamic': False,  # 是否开启动态菜单
+#     'menus': [
+#         {
+#             'app': 'auth',
+#             'name': '权限认证',
+#             'icon': 'fas fa-user-shield',
+#             'models': [
+#                 {'name': '用户', 'url': '/auth/user/', 'icon': 'fa fa-user'},
+#                 {'name': '组', 'url': '/auth/group/', 'icon': 'fa fa-users'}
+#             ]
+#         },
+#         {
+#             'app': 'resource',
+#             'name': '资源',
+#             'icon': 'fa fa-cubes',
+#             'models': [
+#                 {'name': '主机', 'url': '/resource/host/', 'icon': 'fas fa-server'}
+#             ]
+#         },
+#         {
+#             'app': 'application',
+#             'name': '应用',
+#             'icon': 'fas fa-th-large',
+#             'models': [
+#                 {'name': 'MySQL', 'url': '/application/mysql/', 'icon': 'fas fa-database'}
+#             ]
+#         },
+#         {
+#             'app': 'common',
+#             'name': '通用',
+#             'icon': 'fas fa-cogs',
+#             'models': [
+#                 {'name': '操作系统', 'url': '/common/operatingsystem/', 'icon': 'fas fa-desktop'},
+#                 {'name': '环境', 'url': '/common/environment/', 'icon': 'fas fa-tree'},
+#                 {'name': '项目', 'url': '/common/project/', 'icon': 'fas fa-project-diagram'}
+#             ]
+#         }
+#     ]
+# }
 
 # 字段加密密钥，由 Fernet.generate_key() 生成
 FERNET_KEY = 'TtktGQy2ipSj_GLCo-kokZTr10dujAp8Hzax6zouvbw='
