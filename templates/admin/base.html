@@ -156,7 +156,7 @@
         {% endfor %}
     </div>
     <!-- Content -->
-    <div id="content" class="{% block coltype %}colM{% endblock %}">
+    <div id="content" class="{% block coltype %}colM{% endblock %}" style="margin: 0px;height: 100%;">
         {% has_admindoc_page as has_page %}
         {% if has_page %}
         {% url 'django-admindocs-docroot' as rooturl %}
@@ -180,9 +180,9 @@
     </div>
     <!-- END Content -->
 
-    {% block footer %}
+    <!-- {% block footer %}
     <div id="footer"></div>
-    {% endblock %}
+    {% endblock %} -->
 </div>
 <!-- END Container -->
 </body>

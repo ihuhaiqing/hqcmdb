@@ -17,7 +17,6 @@ def custom_index(request, extra_context=None):
         app_list=app_list,
     )
     return TemplateResponse(request, 'admin/index.html', context)
-
 admin.site.index = custom_index
 
 @admin.register(OperatingSystem)
@@ -34,7 +33,7 @@ class EnvironmentAdmin(admin.ModelAdmin):
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
     list_display = ('name', 'status', 'project_manager', 'display_users', 'created_at', 'updated_at')
-    search_fields = ('name', 'project_manager')
+    search_fields = ('name',)
     list_filter = ('status', )
     filter_horizontal = ['users']
 
@@ -46,4 +45,4 @@ class ProjectAdmin(admin.ModelAdmin):
 
     def display_users(self, obj):
         return ", ".join([user.username for user in obj.users.all()])
-    display_users.short_description = '用户'
+    display_users.short_description = '项目成员'

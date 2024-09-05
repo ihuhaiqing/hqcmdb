@@ -35,7 +35,7 @@ class Project(models.Model):
 
     name = models.CharField(max_length=100, unique=True, verbose_name='项目名称', default='New Project')
     status = models.CharField(max_length=7, choices=STATUS_CHOICES, verbose_name='状态', default='online')
-    project_manager = models.CharField(max_length=100, verbose_name='项目经理', default='Unassigned')
+    project_manager = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='项目经理', related_name='project_manager')
     users = models.ManyToManyField(User, verbose_name='用户')
     description = models.TextField(blank=True, verbose_name='描述', default='No description provided')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
