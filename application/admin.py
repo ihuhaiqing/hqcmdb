@@ -8,3 +8,9 @@ class MySQLAdmin(admin.ModelAdmin):
     search_fields = ('host__ip_address',)
     list_filter = ('database_name', 'project', 'environment')
     change_form_template = 'admin/application/change_form.html'
+
+    def get_queryset(self, request):
+        qs = super().get_queryset(request)
+        if request.user.is_superuser:
+            return qs
+        return qs.filter(project__users=request.user)

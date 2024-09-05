@@ -7,7 +7,7 @@ class Host(models.Model):
     hostname = models.CharField(max_length=100, unique=True, verbose_name='主机名', default='hostname')
     ip_address = models.GenericIPAddressField(protocol='both', unpack_ipv4=False, verbose_name='IP地址', default='10.1.0.0')
     operating_system = models.ForeignKey(OperatingSystem, on_delete=models.CASCADE, verbose_name='操作系统')
-    projects = models.ManyToManyField(Project, blank=True, verbose_name='项目')
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, blank=True, verbose_name='项目')
     environment = models.ForeignKey(Environment, on_delete=models.CASCADE, verbose_name='环境')
     cpu_cores = models.IntegerField(verbose_name='CPU核心数', default=8)
     memory_gb = models.FloatField(verbose_name='内存(GB)', default=16.0)

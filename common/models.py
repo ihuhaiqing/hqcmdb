@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class OperatingSystem(models.Model):
     name = models.CharField(max_length=100, verbose_name='名称', default='Red Hat Enterprise Linux')
@@ -35,6 +36,7 @@ class Project(models.Model):
     name = models.CharField(max_length=100, unique=True, verbose_name='项目名称', default='New Project')
     status = models.CharField(max_length=7, choices=STATUS_CHOICES, verbose_name='状态', default='online')
     project_manager = models.CharField(max_length=100, verbose_name='项目经理', default='Unassigned')
+    users = models.ManyToManyField(User, verbose_name='用户')
     description = models.TextField(blank=True, verbose_name='描述', default='No description provided')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='更新时间')
