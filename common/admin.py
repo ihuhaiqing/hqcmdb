@@ -1,9 +1,9 @@
 from django.contrib import admin
 from common.models import OperatingSystem, Environment, Project
-from django.contrib.auth.models import User
-
 from django.contrib import admin
 from django.template.response import TemplateResponse
+
+admin.site.site_header = 'HQCMDB'
 
 # 定义菜单顺序
 def custom_index(request, extra_context=None):

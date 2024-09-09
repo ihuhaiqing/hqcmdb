@@ -8,7 +8,7 @@ class HostAdmin(admin.ModelAdmin):
     list_display = ('hostname', 'ip_address', 'operating_system', 'project', 'environment', 'cpu_cores', 'memory_gb', 'storage_gb', 'description', 'password', 'created_at', 'updated_at')
     search_fields = ('ip_address',)
     list_filter = ('operating_system', 'environment')
-    list_per_page = 12
+    list_per_page = 14
 
     def get_queryset(self, request):
         qs = super().get_queryset(request)
