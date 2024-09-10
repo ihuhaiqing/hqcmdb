@@ -1,4 +1,4 @@
-name: Build and Push HQCMDB Repo Docker Image to ACR
+name: Build and Push Docker Image to ACR
 
 on:
   push:
@@ -20,9 +20,12 @@ jobs:
         run: |
           echo ${{ secrets.ACR_PASSWORD }} | docker login --username=${{ secrets.ACR_USERNAME }} --password-stdin registry.cn-shenzhen.aliyuncs.com
 
+      - name: Extract repository name
+        id: extract_repo
+        run: echo "REPO_NAME=$(basename ${{ github.repository }})" >> $GITHUB_ENV
+
       - name: Build and push Docker image
         run: |
           DATE_TAG=$(date +'%Y%m%d')
-          REPO_NAME=${{ github.repository }}
-          docker build -t registry.cn-shenzhen.aliyuncs.com/${REPO_NAME}:${DATE_TAG} .
-          docker push registry.cn-shenzhen.aliyuncs.com/${REPO_NAME}:${DATE_TAG}
+          docker build -t registry.cn-shenzhen.aliyuncs.com/huhaiqing/${{ env.REPO_NAME }}:${DATE_TAG} .
+          docker push registry.cn-shenzhen.aliyuncs.com/huhaiqing/${{ env.REPO_NAME }}:${DATE_TAG}
