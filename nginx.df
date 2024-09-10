@@ -4,4 +4,4 @@ FROM nginx:alpine
 COPY static /usr/share/nginx/html/static
 
 # 复制 Nginx 配置文件
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx-hqcmdb.conf /etc/nginx/conf.d/nginx-hqcmdb.conf
