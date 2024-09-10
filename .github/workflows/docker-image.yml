@@ -1,0 +1,23 @@
+name: Build and Push Docker Image to ACR
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Log in to Alibaba Cloud Container Registry
+        run: |
+          echo ${{ secrets.ACR_PASSWORD }} | docker login --username=${{ secrets.ACR_USERNAME }} --password-stdin registry.cn-hangzhou.aliyuncs.com
+
+      - name: Build and push Docker image
+        run: |
+          docker build -t registry.cn-hangzhou.aliyuncs.com/huhaiqing/hqcmdb:latest .
+          docker push registry.cn-hangzhou.aliyuncs.com/huhaiqing/hqcmdb:latest
