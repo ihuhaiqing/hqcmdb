@@ -7,6 +7,12 @@ WORKDIR /app
 # 复制当前目录内容到工作目录
 COPY . /app
 
+RUN apk update && apk add --no-cache \
+    pkgconfig \
+    gcc \
+    musl-dev \
+    mariadb-dev
+
 # 安装依赖
 RUN pip install --no-cache-dir -r requirements.txt
 
