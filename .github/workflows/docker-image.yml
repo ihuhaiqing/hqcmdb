@@ -1,4 +1,4 @@
-name: Build and Push Docker Image to ACR
+name: Build and Push HQCMDB Repo Docker Image to ACR
 
 on:
   push:
@@ -26,6 +26,6 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          DATE_TAG=$(date +'%Y%m%d')
+          DATE_TAG=$(date +'%Y%m%d%H%M%S')
           docker build -t registry.cn-shenzhen.aliyuncs.com/huhaiqing/${{ env.REPO_NAME }}:${DATE_TAG} .
           docker push registry.cn-shenzhen.aliyuncs.com/huhaiqing/${{ env.REPO_NAME }}:${DATE_TAG}
