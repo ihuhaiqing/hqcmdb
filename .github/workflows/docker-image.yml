@@ -27,5 +27,7 @@ jobs:
       - name: Build and push Docker image
         run: |
           DATE_TAG=$(date +'%Y%m%d%H%M%S')
-          docker build -t registry.cn-shenzhen.aliyuncs.com/huhaiqing/${{ env.REPO_NAME }}:${DATE_TAG} .
+          docker build -t -f django.df registry.cn-shenzhen.aliyuncs.com/huhaiqing/${{ env.REPO_NAME }}:${DATE_TAG} .
           docker push registry.cn-shenzhen.aliyuncs.com/huhaiqing/${{ env.REPO_NAME }}:${DATE_TAG}
+          docker build -t -f nginx.df registry.cn-shenzhen.aliyuncs.com/huhaiqing/${{ env.REPO_NAME }}-web:${DATE_TAG} .
+          docker push registry.cn-shenzhen.aliyuncs.com/huhaiqing/${{ env.REPO_NAME }}-web:${DATE_TAG}

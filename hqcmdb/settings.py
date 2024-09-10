@@ -87,7 +87,7 @@ DATABASES = {
         'NAME': 'hqcmdb',
         'USER': 'hqcmdb',
         'PASSWORD': 'MySQL8.0',
-        'HOST': 'localhost',
+        'HOST': 'hqcmdb.mysql.server',
         'PORT': '3306',
     }
 }
