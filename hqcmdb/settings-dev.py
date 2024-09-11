@@ -24,13 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ac6o4_tqo)b!u_izts#6egr036w%774kb_*wg_$fg+&m_dtvhh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-# 需要修改成生产环境的访问地址
 CSRF_TRUSTED_ORIGINS = [
-    'http://192.168.42.128:88',
+    'http://hqcmdb:88',
 ]
 
 # Application definition
