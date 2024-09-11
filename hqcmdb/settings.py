@@ -57,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'common.middleware.delete.DeleteOperationMiddleware',
 ]
 
 ROOT_URLCONF = 'hqcmdb.urls'
@@ -89,7 +90,7 @@ DATABASES = {
         'NAME': 'hqcmdb',
         'USER': 'hqcmdb',
         'PASSWORD': 'MySQL8.0',
-        'HOST': 'localhost',
+        'HOST': 'hqcmdb.mysql.server',
         'PORT': '3306',
     }
 }
