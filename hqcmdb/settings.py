@@ -28,13 +28,16 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+CSRF_TRUSTED_ORIGINS = [
+    'http://hqcmdb:88',
+]
+
 # Application definition
 
 INSTALLED_APPS = [
     'simpleui',
     'rest_framework',
     'django_filters',
-    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,12 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'common.middleware.delete.DeleteOperationMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
 ]
-
-CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'hqcmdb.urls'
 
@@ -91,7 +89,7 @@ DATABASES = {
         'NAME': 'hqcmdb',
         'USER': 'hqcmdb',
         'PASSWORD': 'MySQL8.0',
-        'HOST': 'hqcmdb.mysql.server',
+        'HOST': 'localhost',
         'PORT': '3306',
     }
 }
