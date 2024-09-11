@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  hqcmdb.mysql.server:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: MySQL8.0
+      MYSQL_DATABASE: hqcmdb
+      MYSQL_USER: hqcmdb
+      MYSQL_PASSWORD: MySQL8.0
+    ports:
+      - "3306:3306"
+
+  hqcmdb:
+    image: registry.cn-shenzhen.aliyuncs.com/huhaiqing/hqcmdb:20240911032911
+    container_name: hqcmdb
+    ports:
+      - "8000:8000"
+
+  hqcmdb-web:
+    image: registry.cn-shenzhen.aliyuncs.com/huhaiqing/hqcmdb-web:20240911032911
+    container_name: hqcmdb-web
+    ports:
+      - "88:88"
