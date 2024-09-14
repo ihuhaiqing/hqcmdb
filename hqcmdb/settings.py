@@ -89,9 +89,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'hqcmdb',
-        'USER': 'hqcmdb',
-        'PASSWORD': 'MySQL8.0',
-        'HOST': 'hqcmdb.mysql.server',
+        'USER': 'root',
+        'PASSWORD': 'ZsVCqnQ4',
+        'HOST': '10.34.112.181',
         'PORT': '3306',
     }
 }
