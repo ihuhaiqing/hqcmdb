@@ -91,7 +91,7 @@ DATABASES = {
         'NAME': 'hqcmdb',
         'USER': 'root',
         'PASSWORD': 'ZsVCqnQ4',
-        'HOST': '10.34.112.181',
+        'HOST': '10.34.112.184',
         'PORT': '3306',
     }
 }
