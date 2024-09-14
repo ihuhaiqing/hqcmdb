@@ -132,7 +132,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = 'https://7072-prod-8gzd5mpi5db9860c-1306096331.tcb.qcloud.la/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
@@ -148,5 +148,3 @@ SIMPLEUI_DEFAULT_THEME = 'e-blue.css'
 
 # 字段加密密钥，由 Fernet.generate_key() 生成
 FERNET_KEY = 'TtktGQy2ipSj_GLCo-kokZTr10dujAp8Hzax6zouvbw='
-
-STATIC_URL = 'https://7072-prod-8gzd5mpi5db9860c-1306096331.tcb.qcloud.la/'
