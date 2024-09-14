@@ -148,3 +148,5 @@ SIMPLEUI_DEFAULT_THEME = 'e-blue.css'
 
 # 字段加密密钥，由 Fernet.generate_key() 生成
 FERNET_KEY = 'TtktGQy2ipSj_GLCo-kokZTr10dujAp8Hzax6zouvbw='
+
+STATIC_URL = 'https://7072-prod-8gzd5mpi5db9860c-1306096331.tcb.qcloud.la/'
