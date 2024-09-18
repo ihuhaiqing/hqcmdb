@@ -30,7 +30,7 @@ ALLOWED_HOSTS = ['*']
 
 # 需要修改成生产环境的访问地址
 CSRF_TRUSTED_ORIGINS = [
-    'https://django-rq4m-122012-6-1306096331.sh.run.tcloudbase.com/',
+    'https://django-rq4m-122012-6-1306096331.sh.run.tcloudbase.com',
 ]
 
 # Application definition
