@@ -148,3 +148,7 @@ SIMPLEUI_DEFAULT_THEME = 'e-blue.css'
 
 # 字段加密密钥，由 Fernet.generate_key() 生成
 FERNET_KEY = 'TtktGQy2ipSj_GLCo-kokZTr10dujAp8Hzax6zouvbw='
+
+# WX
+WX_APPID='wxda18bac492a1569e'
+WX_SECRET='8789d376bc69056b217b0d56abb95213'
