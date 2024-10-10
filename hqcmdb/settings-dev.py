@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'simpleui',
     'rest_framework',
     'rest_framework_simplejwt',
-    'rest_framework_simplejwt.token_blacklist',
+    # 'rest_framework_simplejwt.token_blacklist',
     'django_filters',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -179,7 +179,7 @@ LOGGING = {
 # SIMPLE_JWT
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
+        'hqcmdb.custom_django_model_permissions.CustomDjangoModelPermissions',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',

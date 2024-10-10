@@ -24,8 +24,8 @@ class WeChatLoginView(APIView):
             user, created = User.objects.get_or_create(username=openid)
             refresh = RefreshToken.for_user(user)
             return Response({
-                'refresh': str(refresh),
                 'access': str(refresh.access_token),
+                'refresh': str(refresh),
             })
         else:
             return Response(data)
