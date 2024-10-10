@@ -19,7 +19,7 @@ class WeChatLoginView(APIView):
         openid = data.get('openid')
         logger.info("url: %s" % url)
         logger.info("openid: %s" % openid)
-        # 根据 openid 创建或获取用户
+        # 根据 openid 创建或获取用户 
         if openid:
             user, created = User.objects.get_or_create(username=openid)
             refresh = RefreshToken.for_user(user)
